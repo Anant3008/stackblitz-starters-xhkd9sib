@@ -1,5 +1,6 @@
 const express = require('express');
 const { resolve } = require('path');
+const config = require('./config'); 
 
 const app = express();
 const port = 3010;
@@ -7,6 +8,7 @@ const port = 3010;
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
+  console.log(config);  
   res.sendFile(resolve(__dirname, 'pages/index.html'));
 });
 
